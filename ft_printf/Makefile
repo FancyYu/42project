@@ -34,7 +34,8 @@ makelibft:
 
 $(NAME): makelibft $(OBJS)
 	@ar -r $(NAME) $(OBJS)
-
+%.o:%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	@rm -f $(OBJS)
 	@cd $(LIBFT) && make clean
